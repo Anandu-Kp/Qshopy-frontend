@@ -1,0 +1,43 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+.home-header {
+    height: 15vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.438);
+}
+
+.home-header a {
+    text-decoration: none;
+}
+
+.home-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.home-main span {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.home-main div {
+    display: flex;
+    gap: 1rem;
+}
