@@ -17,7 +17,7 @@ function Login({ type }) {
         }
         setEmail("");
         setPassword("");
-        axios.post(`http://localhost:3002/${type}/login`, userObj)
+        axios.post(`${process.env.REACT_APP_API}${type}/login`, userObj)
             .then((response) => {
                 // console.log(response);
                 if (response.status == 201) {
