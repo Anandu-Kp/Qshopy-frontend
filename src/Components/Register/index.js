@@ -25,7 +25,7 @@ function Register({ type }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}${type}/register`, formData)
+        axios.post(`${process.env.REACT_APP_API}/${type}/register`, formData)
             .then((res) => {
                 setFormData({
                     name: '',
