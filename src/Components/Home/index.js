@@ -6,6 +6,7 @@ import "./styles.css"
 function Home() {
     return (
         <div className='home'>
+            {/* testibng */}
             <div className='home-header'>
                 <Link to="/"><span className='home-title'>Q <span>Shopy .</span></span></Link>
             </div>
