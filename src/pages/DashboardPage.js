@@ -28,7 +28,7 @@ function UserDashboardPage() {
 
     const fetchProducts = async () => {
         setIsLoading(true);
-        const endpoint = userType == "user" ? `${process.env.REACT_APP_API}product/get-products` : `${process.env.REACT_APP_API}product/get-user-products`;
+        const endpoint = userType == "user" ? `${process.env.REACT_APP_API}/product/get-products` : `${process.env.REACT_APP_API}product/get-user-products`;
 
         axios.get(endpoint, {
             headers: {
