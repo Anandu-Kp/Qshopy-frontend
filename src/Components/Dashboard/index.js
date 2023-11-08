@@ -9,7 +9,7 @@ function Dashboard({ type, productList }) {
 
             {
                 productList.map((element, id) =>
-                    <Product productObj={element} key={id} />
+                    <Product productObj={element} key={id} type={type} />
 
                 )
             }

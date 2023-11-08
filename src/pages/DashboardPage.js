@@ -28,8 +28,8 @@ function UserDashboardPage() {
 
     const fetchProducts = async () => {
         setIsLoading(true);
-        const endpoint = userType == "user" ? `${process.env.REACT_APP_API}product/get-products` : `${process.env.REACT_APP_API}product/get-user-products`;
-
+        // const endpoint = userType == "user" ? `${process.env.REACT_APP_API}/product/get-products` : `${process.env.REACT_APP_API}/product/get-user-products`;
+        const endpoint = userType == "user" ? `${process.env.REACT_APP_API}/product/get-products` : `${process.env.REACT_APP_API}/product/get-user-products`;
         axios.get(endpoint, {
             headers: {
                 "qurinom-token": localStorage.getItem("token")
@@ -40,7 +40,10 @@ function UserDashboardPage() {
                 setProductList(res.data.data);
                 setFilteredProductList(res.data.data)
             })
-            .catch((err) => alert(err.response.data.message))
+            .catch((err) => {
+                setIsLoading(false)
+                console.log(err)
+            })
 
     }
     const filterProducts = (e) => {
@@ -64,7 +67,7 @@ function UserDashboardPage() {
     }
     return (
         <>
-            <Navbar />
+            <Navbar isMerchant={userType == "merchant"} />
             {isLoading ? <Loader /> : <div className='dashboard'>
                 <div className='filter'>
                     <select id="categoryDropdown" onChange={filterProducts}>
@@ -84,7 +87,7 @@ function UserDashboardPage() {
                 </div>
                 <div>
 
-                    <Dashboard type={userType} productList={filteredProductList} />
+                    {!productList ? <h2 style={{ marginTop: "5rem" }}>You dont have any product to show</h2> : <Dashboard type={userType} productList={filteredProductList} />}
                 </div>
             </div>}</>
     )

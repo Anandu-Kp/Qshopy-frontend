@@ -6,6 +6,7 @@ import Homepage from "./pages/Homepage"
 import LoginPage from './pages/Login';
 import RegisterPage from './pages/Register';
 import DashboardPage from './pages/DashboardPage';
+import AddProduct from './pages/AddProduct';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path='/register/:userType' element={<RegisterPage />}></Route>
           <Route path='/register/:userType' element={<RegisterPage />}></Route>
           <Route path='/:userType/dashboard' element={<DashboardPage />}></Route>
+          <Route path='/add-product' element={<AddProduct />}></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

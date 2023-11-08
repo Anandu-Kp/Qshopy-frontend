@@ -1,8 +1,13 @@
 import React from 'react'
 import "./styles.css"
 import image from "../../Assets/image.png"
+import Button from '../Common/Button'
 
-function Product({ productObj, id }) {
+
+function Product({ productObj, id, type }) {
+    const deleteProduct = () => {
+        console.log(productObj);
+    }
     return (
         <div className='product' key={id}>
             <img src={image}></img>
@@ -14,6 +19,12 @@ function Product({ productObj, id }) {
                 <div className='product-main-right'>
                     <span className='product-price'>Rs.{productObj.price}</span>
                 </div>
+                {type == "merchant" &&
+                    <div className='product-footer'>
+                        <Button value="EDIT" onClick={() => window.location.href = "/edit"} />
+                        <Button value="DELETE" onClick={() => deleteProduct()} />
+                    </div>
+                }
             </div>
         </div>
     )
