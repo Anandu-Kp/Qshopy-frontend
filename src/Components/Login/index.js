@@ -38,6 +38,7 @@ function Login({ type }) {
             })
             .catch((error) => {
                 console.log(error);
+                setIsLoading(false)
                 alert(error.response.data.message)
                 // if (!error.response.data.data) window.location.href = "/register/user"
 
