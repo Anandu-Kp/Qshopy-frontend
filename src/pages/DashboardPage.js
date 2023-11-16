@@ -25,7 +25,7 @@ function UserDashboardPage() {
 
     useEffect(() => {
         fetchProducts();
-    }, [])
+    }, [isDeleted])
 
     const fetchProducts = async () => {
         setIsLoading(true);
