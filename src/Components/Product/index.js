@@ -8,7 +8,7 @@ import axios from 'axios'
 function Product({ productObj, id, type }) {
     const deleteProduct = () => {
 
-        axios.delete(`${proces.env.REACT_APP_API}//delete/${productObj._id}`)
+        axios.delete(`${process.env.REACT_APP_API}//delete/${productObj._id}`)
             .then((res) => alert("deleted successfully"))
             .catch((err) => err.response ? alert(err.response.data.data) : alert(err.message))
     }
