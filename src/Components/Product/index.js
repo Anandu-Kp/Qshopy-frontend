@@ -28,12 +28,13 @@ function Product({ productObj, id, type, setIsDeleted, isDeleted }) {
                 <div className='product-main-right'>
                     <span className='product-price'>Rs.{productObj.price}</span>
                 </div>
-                {type == "merchant" &&
-                    <div className='product-footer'>
-                        <Button value="DELETE" onClick={() => deleteProduct()} />
-                    </div>
-                }
+
             </div>
+            {type == "merchant" &&
+                <div className='product-footer'>
+                    <Button value="DELETE" onClick={() => deleteProduct()} />
+                </div>
+            }
         </div>
     )
 }
