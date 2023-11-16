@@ -54,6 +54,7 @@ function UserDashboardPage() {
                 return element.category.toLowerCase() == e.target.value;
             }))
         }
+        else setFilteredProductList(productList)
 
     }
     const filterSubProducts = (e) => {
@@ -63,6 +64,7 @@ function UserDashboardPage() {
                 return element.sub_category.toLowerCase() == e.target.value;
             }))
         }
+        else setFilteredProductList(productList)
 
     }
     return (
