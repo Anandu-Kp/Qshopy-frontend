@@ -8,7 +8,7 @@ import axios from 'axios'
 function Product({ productObj, id, type, setIsDeleted, isDeleted }) {
     const deleteProduct = () => {
 
-        axios.delete(`${process.env.REACT_APP_API}/delete/${productObj._id}`,
+        axios.delete(`${process.env.REACT_APP_API}/product/delete/${productObj._id}`,
             {
                 headers: {
                     "qurinom-token": localStorage.getItem("token")
