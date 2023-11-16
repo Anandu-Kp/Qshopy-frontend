@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import "./styles.css"
 import Product from '../Product'
-function Dashboard({ type, productList }) {
-    const [isDeleted, setIsDeleted] = useState(false);
+function Dashboard({ type, productList, setIsDeleted, isDeleted }) {
+
     console.log(productList);
     return (
         <div className='product-container'>

@@ -15,6 +15,7 @@ function UserDashboardPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [category, setCategory] = useState("all")
     const [filteredProductList, setFilteredProductList] = useState([]);
+    const [isDeleted, setIsDeleted] = useState(false);
 
     const subCategory = {
         sports: ['football', 'cricket', 'badminton'],
@@ -89,7 +90,7 @@ function UserDashboardPage() {
                 </div>
                 <div>
 
-                    {!productList ? <h2 style={{ marginTop: "5rem" }}>You dont have any product to show</h2> : <Dashboard type={userType} productList={filteredProductList} />}
+                    {!productList ? <h2 style={{ marginTop: "5rem" }}>You dont have any product to show</h2> : <Dashboard type={userType} productList={filteredProductList} setIsDeleted={setIsDeleted} isDeleted={isDeleted} />}
                 </div>
             </div>}</>
     )
