@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles.css"
 import Product from '../Product'
 function Dashboard({ type, productList }) {
+    const [isDeleted, setIsDeleted] = useState(false);
     console.log(productList);
     return (
         <div className='product-container'>
@@ -9,7 +10,7 @@ function Dashboard({ type, productList }) {
 
             {
                 productList.map((element, id) =>
-                    <Product productObj={element} key={id} type={type} />
+                    <Product productObj={element} key={id} type={type} setIsDeleted={setIsDeleted} isDeleted={isDeleted} />
 
                 )
             }

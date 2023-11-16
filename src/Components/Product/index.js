@@ -5,11 +5,16 @@ import Button from '../Common/Button'
 import axios from 'axios'
 
 
-function Product({ productObj, id, type }) {
+function Product({ productObj, id, type, setIsDeleted, isDeleted }) {
     const deleteProduct = () => {
 
-        axios.delete(`${process.env.REACT_APP_API}/delete/${productObj._id}`)
-            .then((res) => alert("deleted successfully"))
+        axios.delete(`${process.env.REACT_APP_API}/delete/${productObj._id}`,
+            {
+                headers: {
+                    "qurinom-token": localStorage.getItem("token")
+                }
+            })
+            .then((res) => { alert("deleted successfully"); setIsDeleted(!isDeleted) })
             .catch((err) => err.response ? alert(err.response.data.data) : alert(err))
     }
     return (
