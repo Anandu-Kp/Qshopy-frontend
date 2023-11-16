@@ -14,7 +14,7 @@ function Product({ productObj, id, type, setIsDeleted, isDeleted }) {
                     "qurinom-token": localStorage.getItem("token")
                 }
             })
-            .then((res) => { alert("deleted successfully"); setIsDeleted(!isDeleted) })
+            .then((res) => { alert("deleted successfully"); window.location.reload() })
             .catch((err) => err.response ? alert(err.response.data.data) : alert(err))
     }
     return (
