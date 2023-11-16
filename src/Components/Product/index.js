@@ -2,14 +2,15 @@ import React from 'react'
 import "./styles.css"
 import image from "../../Assets/image.png"
 import Button from '../Common/Button'
+import axios from 'axios'
 
 
 function Product({ productObj, id, type }) {
     const deleteProduct = () => {
 
-        axios.delete(`${REACT_APP_API}//delete/${productObj._id}`)
+        axios.delete(`${proces.env.REACT_APP_API}//delete/${productObj._id}`)
             .then((res) => alert("deleted successfully"))
-            .catch((err) => err.response ? alert(err.response.data.data) : lert(err.message))
+            .catch((err) => err.response ? alert(err.response.data.data) : alert(err.message))
     }
     return (
         <div className='product' key={id}>
