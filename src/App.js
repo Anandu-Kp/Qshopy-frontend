@@ -16,7 +16,6 @@ function App() {
           <Route path='/' element={<Homepage />}></Route>
           <Route path='/login/:userType' element={<LoginPage />}></Route>
           <Route path='/register/:userType' element={<RegisterPage />}></Route>
-          <Route path='/register/:userType' element={<RegisterPage />}></Route>
           <Route path='/:userType/dashboard' element={<DashboardPage />}></Route>
           <Route path='/add-product' element={<AddProduct />}></Route>
 

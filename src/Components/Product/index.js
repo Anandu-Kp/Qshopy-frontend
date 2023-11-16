@@ -6,7 +6,10 @@ import Button from '../Common/Button'
 
 function Product({ productObj, id, type }) {
     const deleteProduct = () => {
-        console.log(productObj);
+
+        axios.delete(`${REACT_APP_API}//delete/${productObj._id}`)
+            .then((res) => alert("deleted successfully"))
+            .catch((err) => err.response ? alert(err.response.data.data) : lert(err.message))
     }
     return (
         <div className='product' key={id}>
@@ -21,7 +24,6 @@ function Product({ productObj, id, type }) {
                 </div>
                 {type == "merchant" &&
                     <div className='product-footer'>
-                        <Button value="EDIT" onClick={() => window.location.href = "/edit"} />
                         <Button value="DELETE" onClick={() => deleteProduct()} />
                     </div>
                 }

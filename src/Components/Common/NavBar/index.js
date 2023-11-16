@@ -2,11 +2,11 @@ import "./styles.css"
 import { Link } from "react-router-dom"
 
 function Navbar({ isMerchant }) {
-
+    const reDirection = isMerchant ? "/merchant/dashboard" : "/user/dashboard"
 
     return (
         <div className="nav">
-            <Link to="/homepage"><div className="nav-left">
+            <Link to={reDirection}><div className="nav-left">
                 <span>Qshopy .</span>
             </div></Link>
             <div className="nav-right">
